@@ -1,0 +1,20 @@
+.content {    
+    display:row;
+    grid-column: 2/5;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.content .block-metadata {
+    grid-column:2/4;
+}
+
+.content .transactions {
+    grid-column:4/5;
+    border:2px solid black;
+}
+
+p.instructions {
+	font-family: monospace;
+	font-size: 32px;
+	text-align: center;
+}
