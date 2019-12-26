@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../styles/Block.css';
+import styles from "../styles/Block.css";
 import Transaction from "./Transaction";
 
 const TransactionList = ({ transactions, selectedBlockNum }) => {

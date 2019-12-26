@@ -7,7 +7,7 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
 //summary incl. hash(id), timestamp, and actions_count and corresponds to sidebar block items
-const GET_LATEST_BLOCK = gql`
+const GET_CHAIN_INFO = gql`
   {
     getChain {
       last_irreversible_block_id
@@ -27,7 +27,7 @@ const GET_LATEST_BLOCK = gql`
 const BlockContainer = () => {
   //Hook for selecting block from sidebar, grabs block number from Block
   const [selectedBlock, selectBlock] = useState(0);
-  const { loading, error, data } = useQuery(GET_LATEST_BLOCK);
+  const { loading, error, data } = useQuery(GET_CHAIN_INFO);
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
