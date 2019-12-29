@@ -4,7 +4,7 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
 const BlockList = ({ latestBlockNum, select }) => {
-  //Summary includes hash(id), timestamp, and actions count
+  //Summary includes hash(id), timestamp, block number and actions count
   const GET_TEN_BLOCK_SUMMARIES = gql`{
   getBlocks(block_num:${latestBlockNum}, limit:10){
     id

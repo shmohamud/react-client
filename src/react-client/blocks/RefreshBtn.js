@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoadBtn = () => {
+const RefreshBtn = ({refresh}) => {
   function refreshPage() {
     window.location.reload(false);
   }
@@ -11,4 +11,4 @@ const LoadBtn = () => {
   );
 };
 
-export default LoadBtn;
+export default RefreshBtn;

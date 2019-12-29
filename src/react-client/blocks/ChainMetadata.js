@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./styles/NetworkMetadata.css";
-const NetworkMetadata = ({ metadata }) => {
+import styles from "./styles/ChainMetadata.css";
+const ChainMetadata = ({ metadata }) => {
   const {
     block_cpu_limit,
     fork_db_head_block_id,
@@ -15,21 +15,21 @@ const NetworkMetadata = ({ metadata }) => {
   } = metadata;
   return (
     <div className={"metadata"}>
-      <h3>Network Metadata</h3>
+      <h3>Chain Metadata</h3>
       <ul>
         <li>Server Version: {server_version_string} </li>
         <li>Block CPU Limit: {block_cpu_limit} </li>
-        <li>last_irreversible_block_id: {last_irreversible_block_id}</li>
+        <li>Last Irreversible Block ID: {last_irreversible_block_id}</li>
         <li>Last Irreversible Block Num: {last_irreversible_block_num}</li>
         <li>Virtual Block CPU Limit: {virtual_block_cpu_limit}</li>
         <li>Virtual Block Net Limit: {virtual_block_net_limit}</li>
-        <li>Fork db Head Block id: {fork_db_head_block_id}</li>
+        <li>Fork db Head Block ID: {fork_db_head_block_id}</li>
         <li>Fork db Head Block Num: {fork_db_head_block_num}</li>
-        <li>Head Block id: {head_block_id} </li>
+        <li>Head Block ID: {head_block_id} </li>
         <li>Head Block Producer: {head_block_producer}</li>
       </ul>
     </div>
   );
 };
 
-export default NetworkMetadata;
+export default ChainMetadata;
