@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/Block.css";
+import styles from "../styles/Block.css";
 
 const Block = ({ summary, select }) => {
   const cleanTimestamp = time => {

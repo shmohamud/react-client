@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/Content.css";
+import styles from "../styles/Content.css";
 import RawBlockDetails from "./RawBlockDetails";
 import Instructions from "./Instructions";
 

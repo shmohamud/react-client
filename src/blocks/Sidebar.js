@@ -1,7 +1,7 @@
 import React from "react";
 import BlockList from "./BlockList";
 import LoadBtn from "./RefreshBtn";
-import styles from "./styles/Sidebar.css";
+import styles from "../styles/Sidebar.css";
 
 const Sidebar = ({ latestBlockNum, refresh, select }) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/ChainMetadata.css";
+import styles from "../styles/ChainMetadata.css";
 const ChainMetadata = ({ metadata }) => {
   const {
     block_cpu_limit,

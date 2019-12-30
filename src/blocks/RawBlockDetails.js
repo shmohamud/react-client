@@ -2,10 +2,10 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import BlockMetadata from "./BlockMetadata";
-import TransactionList from "./transactions/TransactionList";
+import TransactionList from "../transactions/TransactionList";
 
 const RawBlockDetails = ({ selectedBlockNum }) => {
-  const GET_BLOCK_METADATA = gql`
+  const GET_BLOCK = gql`
     {
       getBlock(block_num: ${selectedBlockNum}) {
         id
@@ -29,7 +29,7 @@ const RawBlockDetails = ({ selectedBlockNum }) => {
     }
   `;
 
-  const { loading, error, data } = useQuery(GET_BLOCK_METADATA);
+  const { loading, error, data } = useQuery(GET_BLOCK);
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 

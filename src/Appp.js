@@ -1,5 +1,5 @@
 import React from "react";
-import BlockContainer from "./blocks/BlockContainer";
+import BlockContainer from "./BlockContainer";
 
 const App = () => {
   return <BlockContainer />;

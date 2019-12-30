@@ -1,7 +1,7 @@
 import React from "react";
 import ChainMetadata from './ChainMetadata'
 import PropTypes from "prop-types";
-import styles from "./styles/Header.css";
+import styles from "../styles/Header.css";
 
 function Header({ chainMetadata }) {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Content from "./Content";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Content from "./blocks/Content";
+import Header from "./blocks/Header";
+import Sidebar from "./blocks/Sidebar";
 import styles from "./styles/BlockContainer.css";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
