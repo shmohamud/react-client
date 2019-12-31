@@ -1,6 +1,6 @@
 import React from "react";
-import List from "../List";
 import RefreshBtn from "../RefreshBtn";
+import List from "../List";
 import styles from "./styles.css";
 
 const Sidebar = ({ latestBlockNum, select, refresh }) => {

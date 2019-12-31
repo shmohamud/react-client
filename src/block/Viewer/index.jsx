@@ -1,6 +1,6 @@
 import React from "react";
-import { GET_BLOCK } from "../_queries_";
 import { useQuery } from "@apollo/react-hooks";
+import { GET_BLOCK } from "../_queries_";
 import Metadata from "../Metadata";
 import List from "../../transaction/List";
 
@@ -9,27 +9,7 @@ const Viewer = ({ selectedBlockNum }) => {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
-  let {
-    id,
-    block_num,
-    producer,
-    confirmed,
-    previous,
-    timestamp,
-    action_mroot,
-    transaction_mroot
-  } = data.getBlock;
-
-  const metadata = {
-    id,
-    block_num,
-    producer,
-    confirmed,
-    previous,
-    timestamp,
-    action_mroot,
-    transaction_mroot
-  };
+  const metadata = data.getBlock;
 
   return (
     <>

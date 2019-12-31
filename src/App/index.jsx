@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import Content from "../block/Content";
 import Header from "../chain/Header";
 import Sidebar from "../block/Sidebar";
-import styles from "./styles.css";
-import GET_CHAIN_INFO from "../chain/_queries_";
+import Content from "../block/Content";
 import { useQuery } from "@apollo/react-hooks";
+import GET_CHAIN_INFO from "../chain/_queries_";
+import styles from "./styles.css";
 
 const App = () => {
-  //Hook for selecting block from sidebar list
   const [selectedBlock, selectBlock] = useState(0);
   const { loading, error, data, refetch, networkStatus } = useQuery(
     GET_CHAIN_INFO,
@@ -16,7 +15,7 @@ const App = () => {
     }
   );
 
-  if (networkStatus === 4) return 'Refreshing!';
+  if (networkStatus === 4) return 'R E F R E S H I N G !';
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
