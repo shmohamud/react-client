@@ -1,4 +1,4 @@
-Web Application to pull the most recent blocks from EOSIO 
+EOS.IO Blockchain Explorer 
 
 ● View page updates with the click of a “LOAD” button. Shows the 10 most recent blocks; older blocks  dropped from the list when you hit “LOAD” again.
 ● Block list shows the hash of the block (this is the id), its timestamp, and the count of actions included in that block.

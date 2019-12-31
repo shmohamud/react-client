@@ -1,6 +1,6 @@
 import React from "react";
 
-const BlockMetatdata = ({ metadata }) => {
+const Metadata = ({ metadata }) => {
   const cleanTimestamp = time => {
     const timestamp = new Date(time).toLocaleString();
     return timestamp;
@@ -20,4 +20,4 @@ const BlockMetatdata = ({ metadata }) => {
   );
 };
 
-export default BlockMetatdata;
+export default Metadata;

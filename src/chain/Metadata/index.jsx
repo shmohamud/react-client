@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../styles/ChainMetadata.css";
-const ChainMetadata = ({ metadata }) => {
+import styles from "./styles.css";
+
+const Metadata = ({ metadata }) => {
   const {
     block_cpu_limit,
     fork_db_head_block_id,
@@ -13,6 +14,7 @@ const ChainMetadata = ({ metadata }) => {
     virtual_block_cpu_limit,
     virtual_block_net_limit
   } = metadata;
+
   return (
     <div className={"metadata"}>
       <h3>Chain Metadata</h3>
@@ -32,4 +34,4 @@ const ChainMetadata = ({ metadata }) => {
   );
 };
 
-export default ChainMetadata;
+export default Metadata;

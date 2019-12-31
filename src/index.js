@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM, { render } from "react-dom";
 import { ApolloProvider } from "react-apollo";
 import { ApolloClient, HttpLink, InMemoryCache } from "apollo-client-preset";
-import App from "./BlockContainer";
+import App from "./App/index.jsx";
 import * as serviceWorker from "./serviceWorker";
 
 const httpLink = new HttpLink({ uri: "http://localhost:4000/graphql" });

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../styles/Block.css";
+import styles from "./styles.css";
 
-const Block = ({ summary, select }) => {
+const Item = ({ block, select }) => {
   const cleanTimestamp = time => {
     const timestamp = new Date(time).toLocaleString();
     return timestamp;
@@ -17,12 +17,12 @@ const Block = ({ summary, select }) => {
   };
 
   return (
-    <li onClick={() => select(summary.block_num)}>
-      <h3> Timestamp: {cleanTimestamp(summary.timestamp)}</h3>
-      <h4> Block ID: {truncateStr(summary.id)} </h4>
-      <h4>Actions Count: {summary.actions_count}</h4>
+    <li onClick={() => select(block.block_num)}>
+      <h3> Timestamp: {cleanTimestamp(block.timestamp)}</h3>
+      <h4> Block ID: {truncateStr(block.id)} </h4>
+      <h4>Actions Count: {block.actions_count}</h4>
     </li>
   );
 };
 
-export default Block;
+export default Item;
