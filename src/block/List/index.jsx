@@ -8,7 +8,7 @@ const List = ({ latestBlockNum, select }) => {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   return (
-    <ul>
+    <ul key={latestBlockNum+1}>
       {data.getBlocks.map(block => (
         <Block key={block.block_num} block={block} select={select} />
       ))}

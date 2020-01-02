@@ -8,14 +8,12 @@ const Viewer = ({ selectedBlockNum }) => {
   const { loading, error, data } = useQuery(GET_BLOCK(selectedBlockNum));
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
-
-  const metadata = data.getBlock;
-
+  let metadata = data.getBlock;
   return (
     <>
       <Metadata metadata={metadata} />
       <List
-        transactions={data.getBlock.transactions}
+        transactions={data.getBlock.transactions? data.getBlock.transactions : []}
         selectedBlockNum={selectedBlockNum}
       />
     </>

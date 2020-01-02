@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../chain/Header";
 import Sidebar from "../block/Sidebar";
 import Content from "../block/Content";
@@ -15,12 +15,14 @@ const App = () => {
     }
   );
 
-  if (networkStatus === 4) return 'R E F R E S H I N G !';
+  if (networkStatus === 4) return "R E F R E S H I N G !";
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
+ 
+
   return (
-    <div className={"grid-container"}>
+    <div key={data.getChain.chain_id} className={"grid-container"}>
       <Header chainMetadata={data.getChain} />
       <Sidebar
         select={selectBlock}

@@ -1,11 +1,11 @@
 import React from "react";
 import Item from "../Item";
 
-const List = ({ transactions, selectedBlockNum }) => {
+const List = ({ transactions }) => {
   let key = 0;
   return (
     <div className={"transactions"}>
-      <h1>Transactions for Block Num: {selectedBlockNum} </h1>
+      <h3>Block Transactions</h3>
       {transactions.map(t => {
         return <Item key={(key += 1)} transaction={t} />;
       })}

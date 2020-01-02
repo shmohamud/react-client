@@ -1,15 +1,14 @@
 import React from "react";
 import styles from './styles.css'
 
-const Transaction = ({ transaction }) => {
+const Item = ({ transaction }) => {
+  let rawData = JSON.stringify(transaction, undefined, 4)
   return (
-    <ul className={'transactions'}>
-      <li>Transaction Recipt ID: {transaction.trx.id}</li>
-      <li>Status: {transaction.status}</li>
-      <li>CPU Usage US: {transaction.cpu_usage_us}</li>
-      <li>Net Usage Words: {transaction.net_usage_words}</li>
-    </ul>
+    <div>
+    <h3>Transaction receipt</h3>
+    <pre>{rawData}</pre>
+  </div>
   );
 };
 
-export default Transaction;
+export default Item;
