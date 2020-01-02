@@ -1,5 +1,5 @@
 import React from "react";
-import Block from "../Item";
+import Item from "../Item";
 import { GET_BLOCKS } from "../_queries_";
 import { useQuery } from "@apollo/react-hooks";
 
@@ -8,9 +8,9 @@ const List = ({ latestBlockNum, select }) => {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
   return (
-    <ul key={latestBlockNum+1}>
+    <ul>
       {data.getBlocks.map(block => (
-        <Block key={block.block_num} block={block} select={select} />
+        <Item key={block.block_num} block={block} select={select} />
       ))}
     </ul>
   );

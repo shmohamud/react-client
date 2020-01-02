@@ -13,7 +13,7 @@ const Viewer = ({ selectedBlockNum }) => {
     <>
       <Metadata metadata={metadata} />
       <List
-        transactions={data.getBlock.transactions? data.getBlock.transactions : []}
+        transactions={data.getBlock.transactions}
         selectedBlockNum={selectedBlockNum}
       />
     </>
