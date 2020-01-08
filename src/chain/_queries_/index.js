@@ -22,4 +22,4 @@ const GET_CHAIN_INFO = gql`
   }
 `;
 
-export default GET_CHAIN_INFO 
+export default GET_CHAIN_INFO;

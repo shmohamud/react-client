@@ -1,4 +1,4 @@
-export const refresh = (select, refetch) => {
+export const load = (select, refetch) => {
     select(0);
     refetch();
   };

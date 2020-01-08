@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "../chain/Header";
 import Sidebar from "../block/Sidebar";
 import Content from "../block/Content";
 import { useQuery } from "@apollo/react-hooks";
 import GET_CHAIN_INFO from "../chain/_queries_";
-import { refresh } from "./helpers";
+import { load } from "./helpers";
 import styles from "./styles.css";
 
 const App = () => {
@@ -16,7 +16,17 @@ const App = () => {
   );
   const [selectedBlock, selectBlock] = useState(0);
 
-  if (networkStatus === 4) return "R E F R E S H I N G !";
+  if (networkStatus === 4)
+    return                         `R 
+                                      E 
+                                        F
+                                          R 
+                                            E
+                                              S
+                                                H
+                                                  I
+                                                    N
+                                                      G !`;
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
@@ -25,7 +35,7 @@ const App = () => {
       <Header chainMetadata={data.getChain} />
       <Sidebar
         latestBlockNum={data.getChain.last_irreversible_block_num}
-        refresh={() => refresh(selectBlock, refetch)}
+        load={() => load(selectBlock, refetch)}
         select={selectBlock}
       />
       <Content
