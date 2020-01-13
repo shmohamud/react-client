@@ -1,8 +1,8 @@
 import { gql } from "apollo-boost";
 
-const GET_CHAIN_INFO = gql`
+const GET_CHAIN_METADATA = gql`
   {
-    getChain {
+    getChainMetadata {
       server_version
       server_version_string
       chain_id
@@ -19,7 +19,6 @@ const GET_CHAIN_INFO = gql`
       virtual_block_cpu_limit
       virtual_block_net_limit
     }
-  }
-`;
+  }`;
 
-export default GET_CHAIN_INFO;
+export default GET_CHAIN_METADATA;

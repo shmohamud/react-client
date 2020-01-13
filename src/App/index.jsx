@@ -3,13 +3,13 @@ import Header from "../chain/Header";
 import Sidebar from "../block/Sidebar";
 import Content from "../block/Content";
 import { useQuery } from "@apollo/react-hooks";
-import GET_CHAIN_INFO from "../chain/_queries_";
+import GET_CHAIN_METADATA from "../chain/_queries_";
 import { load } from "./helpers";
 import styles from "./styles.css";
 
 const App = () => {
   const { loading, error, data, refetch, networkStatus } = useQuery(
-    GET_CHAIN_INFO,
+    GET_CHAIN_METADATA,
     {
       notifyOnNetworkStatusChange: true
     }
@@ -32,14 +32,14 @@ const App = () => {
 
   return (
     <div className={"grid-container"}>
-      <Header chainMetadata={data.getChain} />
+      <Header chainMetadata={data.getChainMetadata} />
       <Sidebar
-        latestBlockNum={data.getChain.last_irreversible_block_num}
+        latestBlockNum={data.getChainMetadata.last_irreversible_block_num}
         load={() => load(selectBlock, refetch)}
         select={selectBlock}
       />
       <Content
-        latestBlockNum={data.getChain.last_irreversible_block_num}
+        latestBlockNum={data.getChainMetadata.last_irreversible_block_num}
         selected={selectedBlock}
       />
     </div>

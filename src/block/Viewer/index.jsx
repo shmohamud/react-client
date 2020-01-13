@@ -1,21 +1,17 @@
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-import { GET_BLOCK } from "../_queries_";
 import Metadata from "../Metadata";
 import List from "../../transaction/List";
+import {useQuery} from '@apollo/react-hooks'
+import {GET_BLOCK_METADATA} from '../_queries_'
 
 const Viewer = ({ selectedBlockNum }) => {
-  const { loading, error, data } = useQuery(GET_BLOCK(selectedBlockNum));
+  const { loading, error, data } = useQuery(GET_BLOCK_METADATA(selectedBlockNum));
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
-  let metadata = data.getBlock;
   return (
     <>
-      <Metadata metadata={metadata} />
-      <List
-        transactions={data.getBlock.transactions}
-        selectedBlockNum={selectedBlockNum}
-      />
+      <Metadata selectedBlockNum={selectedBlockNum} metadata={data.getBlockMetadata}/>
+      <List selectedBlockNum={selectedBlockNum} />
     </>
   );
 };

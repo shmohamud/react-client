@@ -1,29 +1,17 @@
 import React from "react";
 import { MockedProvider } from "@apollo/react-testing";
-import { GET_BLOCKS } from "../../block/_queries_";
 import { create, act } from "react-test-renderer";
+import { GET_BLOCK_TRANSACTIONS } from '../_queries_'
 import List from "./index.jsx";
 
 const mocks = [
   {
     request: {
-      query: GET_BLOCKS(99097126)
+      query: GET_BLOCK_TRANSACTIONS(99097126)
     },
     result: {
       data: {
-        getBlock: {
-          id:
-            "05e81a2620aa8f521e018c07419e58fc023f1e3b107f73b1757edbb475838f31",
-          block_num: 99097126,
-          producer: "eoshuobipool",
-          confirmed: 0,
-          previous:
-            "05e81a2508587b344f230eaaf00f07db0d662a043ee25e406729ada3a00b29a9",
-          timestamp: "2020-01-08T00:59:59.500",
-          action_mroot:
-            "6fda41a5ffaa0f330389ed005359ead143ebbb7d1fe4a1088d5eab9fdcce8abb",
-          transaction_mroot:
-            "5d86b4c840aa32e7857842cc5b0a5e7e974d83f4032166164efdcf953d8be24f",
+        getBlockTransactions: {
           transactions: [
             {
               status: "executed",
@@ -151,12 +139,7 @@ const mocks = [
 
 const component = create(
   <MockedProvider mocks={mocks}>
-    <List
-      latestBlockNum={99097126}
-      select={() => {
-        console.log("test");
-      }}
-    />
+    <List selectedBlockNum={99097126} />
   </MockedProvider>
 );
 const tree = component.toJSON();
@@ -166,12 +149,7 @@ it("renders without error", () => {
   act(() => {
     create(
       <MockedProvider mocks={mocks}>
-        <List
-          latestBlockNum={99097126}
-          select={() => {
-            console.log("test");
-          }}
-        />
+        <List selectedBlockNum={99097126} />
       </MockedProvider>
     );
   });

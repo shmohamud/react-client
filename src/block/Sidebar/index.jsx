@@ -6,11 +6,14 @@ import styles from "./styles.css";
 const Sidebar = ({ latestBlockNum, select, load }) => {
   return (
     <div className="block-summary-element sidebar">
-      <LoadBtn load={load} select={select} />
+      <LoadBtn load={load} />
       <h1>Recent Blocks</h1>
       <List select={select} latestBlockNum={latestBlockNum} />
     </div>
   );
 };
+
+
+
 
 export default Sidebar;
