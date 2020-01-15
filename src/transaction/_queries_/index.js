@@ -1,7 +1,7 @@
-import {gql} from 'apollo-boost'
+import { gql } from "apollo-boost";
 
 export const GET_BLOCK_TRANSACTIONS = selectedBlockNum => gql`{
-    getBlock(block_num: ${selectedBlockNum}) {
+    getBlock(block_num:${selectedBlockNum}) {
       id
       block_num
       producer
@@ -15,9 +15,16 @@ export const GET_BLOCK_TRANSACTIONS = selectedBlockNum => gql`{
         cpu_usage_us
         net_usage_words
         trx {
-          id 
+          id
+          transaction {
+            actions {
+            name
+            account
+          }
         }
       }
     }
-  }`
+  }
+}`;
   
+

@@ -3,7 +3,6 @@ EOS.IO Blockchain Explorer
 ● View page updates with the click of a “LOAD” button. Shows the 10 most recent blocks; older blocks  dropped from the list when you hit “LOAD” again.
 ● Block list shows the hash of the block (this is the id), its timestamp, and the count of actions included in that block.
 ● Clicking a block entry expands the line to show the raw contents of the block output.
-● Displays the ricardian contract provided in the abi of the included block actions 
 
 Resources
 ● eos-js: ​https://github.com/EOSIO/eosjs

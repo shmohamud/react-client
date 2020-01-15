@@ -1,5 +1,5 @@
 .header-grid-container {
-  display: grid;
+  display: inline-grid;
   grid-column: 1/5;
   grid-template-rows: auto;
   grid-template-columns: .5fr 3.5fr;
