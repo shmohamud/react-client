@@ -10,6 +10,7 @@ const List = ({selectedBlockNum}) => {
   let key = 0;
   return (
     <div className={"transactions"}>
+      <button>Show Formatted Transactions</button>
       <h3>Block Transactions</h3>
       <ul>
       {data.getBlock.transactions.map(t => {

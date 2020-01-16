@@ -1,13 +1,13 @@
 import React from 'react'
 import { MockedProvider } from '@apollo/react-testing';
-import  GET_CHAIN_INFO  from '../chain/_queries_/index.js';
+import  GET_CHAIN_METADATA  from '../chain/_queries_/index.js';
 import {create, act} from 'react-test-renderer';
 import  App from './index.jsx';
 
 const mocks = [
   {
     request: {
-      query: GET_CHAIN_INFO,
+      query: GET_CHAIN_METADATA,
     },
     result: {
       data: {
