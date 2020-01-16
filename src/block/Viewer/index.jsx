@@ -10,7 +10,7 @@ const Viewer = ({ selectedBlockNum }) => {
   if (error) return `Error! ${error.message}`;
   return (
     <>
-      <Metadata selectedBlockNum={selectedBlockNum} metadata={data.getBlockMetadata}/>
+      <Metadata selectedBlockNum={selectedBlockNum} metadata={data.getBlock}/>
       <List selectedBlockNum={selectedBlockNum} />
     </>
   );

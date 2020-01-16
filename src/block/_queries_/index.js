@@ -9,7 +9,7 @@ export const GET_BLOCKS = latestBlockNum => gql`{
  } 
 }`
 export const GET_BLOCK_METADATA = selectedBlockNum => gql`{
-  getBlockMetadata(block_num:${selectedBlockNum}) {
+  getBlock(block_num:${selectedBlockNum}) {
     id
     block_num
     producer
@@ -21,3 +21,5 @@ export const GET_BLOCK_METADATA = selectedBlockNum => gql`{
     actions_count
   }
 }`
+
+
