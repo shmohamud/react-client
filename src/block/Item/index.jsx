@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./styles.css";
-import { cleanTimestamp, truncateStr } from "./helpers";
+import { cleanTimestamp, truncateStr } from "../helpers";
 
 const Item = ({ block, select }) => {
   return (

@@ -1,18 +1,16 @@
 .content {    
     display:row;
     grid-column: 2/5;
-    border: 2px solid rgb(0, 0, 0);
+    border-top: .3px solid #000000;
+    margin: 0px 0px 0px 2px;
 }
-
 .content .block-metadata {
     grid-column:2/4;
 }
-
 .content .transactions {
     grid-column:4/5;
-    border:2px solid black;
+    border:.5px solid black;
 }
-
 p.instructions {
 	font-family: monospace;
 	font-size: 32px;

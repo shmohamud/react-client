@@ -1,8 +1,29 @@
 .metadata {
     border:5px solid rgb(66, 66, 66);
-    grid-column-start: 3;
-    grid-column-end: 5;
     width:fit-content;
     padding: 10px;
+    color:white;
+}
+.raw-metadata {
+    background-color: white;    
+    border:5px solid rgb(66, 66, 66);
+    width:fit-content;
+    padding: 10px;
+}
+.header-grid-container {
+    display: inline-grid;
+    grid-column: 1/5;
+    grid-template-rows: auto;
+    grid-template-columns: .5fr 3.5fr;
+    grid-column-gap: 30px;
+    background-color: rgb(0, 0, 0);
+}
+  .header-grid-container > h1 {
+    grid-column: 1;
+    height:fit-content;
+    padding:30px;
+    border: 5px solid rgb(172, 170, 170);
+    border-radius: 1em;
+    font-size: 30px;
     color:white;
 }

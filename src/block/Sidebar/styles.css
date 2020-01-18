@@ -6,9 +6,8 @@
 
 .block-summary-element {
     float:left;
-    margin: 10px 0px;
     padding: 20px;
-    border: 2px solid grey;
+    border: .5px solid grey;
   }
 
 div.sidebar button {
