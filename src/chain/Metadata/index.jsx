@@ -2,7 +2,7 @@ import React from "react";
 import Checkbox from "../../common/Checkbox";
 import styles from "./styles.css";
 
-const Metadata = ({ metadata, checked, toggle }) => {
+const Metadata = ({ metadata, isChecked, handleCheck }) => {
   const {
     block_cpu_limit,
     fork_db_head_block_id,
@@ -16,15 +16,15 @@ const Metadata = ({ metadata, checked, toggle }) => {
     virtual_block_net_limit
   } = metadata;
   const rawMetadata = JSON.stringify(metadata, undefined, 4);
-  return checked ? (
+  return isChecked ? (
     <div className={"raw-metadata"}>
-      <Checkbox toggle={()=>toggle()}labelText={"Uncheck for Formatted"} />
+      <Checkbox handleCheck={()=>handleCheck()}labelTextChecked={"Uncheck for Formatted"} isChecked={isChecked} />
       <h3>Raw Chain Metadata</h3>
       <pre>{rawMetadata}</pre>
     </div>
   ) : (
     <div className={"metadata"}>
-      <Checkbox toggle={()=>toggle()}labelText={"Check for Raw JSON"} />
+      <Checkbox handleCheck={()=>handleCheck()} labelTextUnchecked={"Check for Raw JSON"} isChecked={isChecked} />
       <h3>Chain Metadata</h3>
       <ul>
         <li>Server Version: {server_version_string} </li>

@@ -1,14 +1,18 @@
 import React from "react";
-import {cleanTimestamp} from "../../block/helpers"
-import Checkbox from '../../common/Checkbox'
-import styles from './styles.css'
+import { cleanTimestamp } from "../../block/helpers";
+import Checkbox from "../../common/Checkbox";
+import styles from "./styles.css";
 
-const Metadata = ({metadata}) => {
+const Metadata = ({ metadata, handleCheck, isChecked }) => {
   const rawMetadata = JSON.stringify(metadata, undefined, 4);
-  return (
+  return !isChecked ? (
     <div className={"content block-metadata"}>
-      <Checkbox labelText={"Check for Raw JSON"}/>
-      <div className={"content block-metadata"}>
+      <Checkbox
+        handleCheck={handleCheck}
+        isChecked={isChecked}
+        labelTextChecked={"Uncheck for Formatted"}
+        labelTextUnchecked={"Check for Raw JSON"}
+      />
       <h2>Block Metadata: </h2>
       <h3>Timestamp: {cleanTimestamp(metadata.timestamp)}</h3>
       <h3>Block ID: {metadata.id}</h3>
@@ -19,6 +23,15 @@ const Metadata = ({metadata}) => {
       <h3>Transactions Merkle Root: {metadata.transaction_mroot}</h3>
       <h3>Action Merkle Root: {metadata.action_mroot}</h3>
     </div>
+  ) : (
+    <div className={"content block-metadata"}>
+      <Checkbox
+        handleCheck={handleCheck}
+        isChecked={isChecked}
+        labelTextChecked={"Uncheck for Formatted"}
+        labelTextUnchecked={"Check for Raw JSON"}
+      />
+      <pre>{rawMetadata}</pre>
     </div>
   );
 };

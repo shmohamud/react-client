@@ -2,18 +2,14 @@ div.transactions ul {
     margin: 0 0 20px 0;
     padding: 0;
   }
-  
 div.transactions ul li {
     list-style: none;
-    border-top: 1px solid grey;
     border-bottom: 1px solid grey;
     padding: 0 5px;
   }
-  
 div.transactions ul li:first-child {
     border-top: 1px solid rgb(128, 128, 128);
   }
-  
 div.transactions ul li:hover {
     background-image: linear-gradient(black,gray);
     color:white;
