@@ -3,18 +3,14 @@ import styles from "./styles.css";
 
 const Checkbox = ({
   handleCheck,
-  isChecked,
-  labelTextChecked,
-  labelTextUnchecked,
+  labelText,
   item
 }) => {
-  let labelText = "";
-  isChecked ? (labelText = labelTextChecked) : (labelText = labelTextUnchecked);
   return (
     <label>
       {labelText}
       <input type="checkbox" />
-      <span className="checkmark" onClick={(_i) => handleCheck(item)} />
+      <span className="checkmark" onClick={() => handleCheck(item)} />
     </label>
   );
 };

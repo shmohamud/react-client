@@ -2,50 +2,33 @@ import React from "react";
 import Checkbox from "../../common/Checkbox";
 import styles from "./styles.css";
 
-const Item = ({ handleCheck, isChecked, transaction }) => {
-  const countActions = transaction => {
-    if (hasActions(transaction)) {
-      return transaction.actions.length;
-    }
-    return 0;
-  };
-  const hasActions = transaction => {
-    if (transaction && transaction.hasOwnProperty("actions")) {
-      return true;
-    }
-    return false;
-  };
-  let key = 0;
+const Item = ({ handleCheck, isChecked, transaction, actionsCount }) => {
   let rawData = JSON.stringify(transaction, undefined, 4);
-  return !isChecked(transaction) ? (
-    <>
+  return isChecked(transaction) ? (
+    <li>
       <Checkbox
-        key={(key += 1)}
+        key={`xyz${transaction.trx.id}`}
         handleCheck={() => handleCheck(transaction)}
         transaction={transaction}
-        isChecked={isChecked(transaction)}
-        labelTextUnchecked={"Check for Raw JSON"}
-        labelTextChecked={"Uncheck for Styled JSON"}
-      />
-      <li>
-        <h3>
-          Transaction ID: {transaction.trx.id} Actions Count:{" "}
-          {countActions(transaction.trx.transaction)}
-        </h3>
-      </li>
-    </>
-  ) : (
-    <>
-      <Checkbox
-        key={transaction.trx.id}
-        handleCheck={() => handleCheck(transaction)}
-        transaction={transaction}
-        isChecked={isChecked(transaction)}
-        labelTextUnchecked={"Check for Raw JSON"}
-        labelTextChecked={"Uncheck for Styled JSON"}
+        isChecked={() => isChecked(transaction)}
+        labelText={"Uncheck for Formatted"}
+
       />
       <pre>{rawData}</pre>
-    </>
+    </li>
+  ) : (
+    <li>
+      <Checkbox
+        key={`xyz${transaction.trx.id}`}
+        handleCheck={() => handleCheck(transaction)}
+        transaction={transaction}
+        isChecked={() => isChecked(transaction)}
+        labelText={"Check for Raw JSON"}
+      />
+      <h3>
+        Transaction ID: {transaction.trx.id} Actions Count: {actionsCount}
+      </h3>
+    </li>
   );
 };
 

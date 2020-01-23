@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import Checkbox from "../../common/Checkbox";
 import Item from "../Item";
 import { useQuery } from "@apollo/react-hooks";
 import { GET_BLOCK_TRANSACTIONS } from "../_queries_";
+import {countActions} from './helpers'
+import styles from './styles.css';
 
 const List = ({ selectedBlockNum }) => {
   const [checkedItems, setCheckedItems] = useState([]);
@@ -17,22 +20,20 @@ const List = ({ selectedBlockNum }) => {
   );
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
-  let key = 0;
   return (
     <div className={"transactions"}>
       <h1>Block Transactions</h1>
       <ul>
         {data.getBlock.transactions.map(t => {
-          return (
-            <span>
+          return t.trx? (
               <Item
-                key={(key += 1)}
-                handleCheck={handleCheck}
+                key={t.trx.id}
+                handleCheck={()=>handleCheck(t)}
                 transaction={t}
-                isChecked={t => isChecked(t)}
+                isChecked={() => isChecked(t)}
+                actionsCount={countActions(t.trx.transaction)}
               />
-            </span>
-          );
+          ):(null);
         })}
       </ul>
     </div>
