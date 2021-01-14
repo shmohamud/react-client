@@ -25,7 +25,9 @@ div.sidebar button {
   div.sidebar ul li {
     list-style: none;
     border-bottom: 1px solid grey;
-    padding: 0 5px;
+    padding: 15px;
+    word-break: break-all;
+    
   }
   
   div.sidebar ul li:first-child {

@@ -1,15 +1,15 @@
 .content {    
     display:row;
     grid-column: 2/5;
-    border-top: .3px solid #000000;
     margin: 0px 0px 0px 2px;
 }
 .content .block-metadata {
     grid-column:2/4;
+    padding: 15px;
 }
 .content .transactions {
     grid-column:4/5;
-    border:.5px solid black;
+    padding: 15px;
 }
 p.instructions {
 	font-family: monospace;

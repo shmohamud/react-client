@@ -5,8 +5,8 @@ div.transactions ul {
 div.transactions ul li {
     list-style: none;
     border-bottom: 1px solid grey;
-    padding: 0 5px;
-    word-break: break-all
+    word-break: break-all;
+    padding:15px;
   }
 div.transactions ul li:first-child {
     border-top: 1px solid rgb(128, 128, 128);

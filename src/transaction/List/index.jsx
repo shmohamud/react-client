@@ -20,6 +20,7 @@ const List = ({ selectedBlockNum }) => {
   return (
     <div className={"transactions"}>
       <h1>Block Transactions</h1>
+      {!data.getBlock.transactions.length && <h2>There are no transactions for this Block.</h2>}
       <ul>
         {data.getBlock.transactions.map(t => {
           return t.trx? (
