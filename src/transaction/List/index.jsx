@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Checkbox from "../../common/Checkbox";
 import Item from "../Item";
 import { useQuery } from "@apollo/react-hooks";
 import { GET_BLOCK_TRANSACTIONS } from "../_queries_";
@@ -8,11 +7,9 @@ import styles from './styles.css';
 
 const List = ({ selectedBlockNum }) => {
   const [checkedItems, setCheckedItems] = useState([]);
-  const isChecked = item =>
-    checkedItems.filter(_i => _i.trx.id === item.trx.id).length !== 0;
-    const handleCheck = t => {
-      if (isChecked(t))
-        return setCheckedItems(checkedItems.filter(_i => _i.trx.id !== t.trx.id));
+  const isChecked = item => checkedItems.filter(_i => _i.trx.id === item.trx.id).length !== 0;
+  const handleCheck = t => {
+      if (isChecked(t)) return setCheckedItems((checkedItems)=>checkedItems.filter(_i => _i.trx.id !== t.trx.id));
       setCheckedItems(_items => [..._items, t]);
     };
   const { loading, error, data } = useQuery(

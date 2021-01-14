@@ -6,6 +6,7 @@ div.transactions ul li {
     list-style: none;
     border-bottom: 1px solid grey;
     padding: 0 5px;
+    word-break: break-all
   }
 div.transactions ul li:first-child {
     border-top: 1px solid rgb(128, 128, 128);

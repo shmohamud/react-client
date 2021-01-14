@@ -17,8 +17,7 @@ const Metadata = ({ metadata }) => {
   } = metadata;
   const [isChecked, setChecked] = useState(false);
   const handleCheck = () => {
-    debugger
-    setChecked(isChecked => !isChecked);
+    setChecked((isChecked) => !isChecked);
   };
   const rawMetadata = JSON.stringify(metadata, undefined, 4);
   return isChecked ? (
