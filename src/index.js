@@ -5,7 +5,7 @@ import { ApolloClient, HttpLink, InMemoryCache } from "apollo-client-preset";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-const httpLink = new HttpLink({ uri: "http://localhost:4000/graphql" });
+const httpLink = new HttpLink({ uri: "https://block-explorer-server.herokuapp.com" });
 const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache({ addTypename: false }),
