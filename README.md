@@ -8,3 +8,4 @@ Resources
 ● eos-js: ​https://github.com/EOSIO/eosjs
 ● Main Chain Endpoint: Get full block content: https://api.eosnewyork.io/v1/chain/get_info
 ● Description of api endpoints: ​https://developers.eos.io/eosio-nodeos/reference
+● test-js: ​this is a test bullet point
