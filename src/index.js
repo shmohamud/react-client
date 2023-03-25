@@ -5,7 +5,7 @@ import { ApolloClient, HttpLink, InMemoryCache } from "apollo-client-preset";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-const httpLink = new HttpLink({ uri: "https://block-explorer-server.netlify.app/graphql" });
+const httpLink = new HttpLink({ uri: "https://mvad2mcodl.execute-api.us-east-1.amazonaws.com/prod/graphql" });
 const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache({ addTypename: false }),
